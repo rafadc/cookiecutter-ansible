@@ -1,0 +1,9 @@
+--
+# This Playbook runs all the common plays in the deployment
+
+- name: Install common utilities
+  apt: name={{ "{{ item }}" }} state=installed
+  with_items:
+   - git
+   - tmux
+   - python-pip
